@@ -20,8 +20,8 @@ final class Constants {
     static let flightOrderUrl = "/booking/flight-orders"
     static let delayPredictionUrl = "/travel/predictions/flight-delay"
     
-    static let clientId = "SWrGF5PZUAwTTOo7HnWH5bN3VyFj7JMJ"
-    static let clientSecret = "ZgmeBoGkIzwQjwZZ"
+    static let clientId = "YOUR_API_KEY"
+    static let clientSecret = "YOUR_API_SECRET"
     
     // MARK: - Auth Token
     
