@@ -34,7 +34,7 @@ enum PredictionResultType: String, CaseIterable, Decodable {
         case .BETWEEN_60_AND_120_MINUTES:
             return "delayed between 60 and 120 minutes"
         case .OVER_120_MINUTES_OR_CANCELLED:
-            return "delayed by over 120 minutes or cancelled"
+            return "delayed by over 120 minutes or canceled"
         }
     }
     
