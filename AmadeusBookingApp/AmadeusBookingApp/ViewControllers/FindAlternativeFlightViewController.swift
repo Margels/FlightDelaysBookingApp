@@ -98,10 +98,10 @@ final class FindAlternativeFlightViewController: UIViewController {
     
     private func confirmChoice() {
         guard let chosenFlight = chosenFlight, let delayPrediction = chosenFlight.0 else { return }
-        let newDelayPrediction = "\(delayPrediction.probability.integerValue)% of being \(delayPrediction.result.description)"
+        let newDelayPrediction = "\(delayPrediction.probability.integerValue)% chance of being \(delayPrediction.result.description)"
         DispatchQueue.main.async {
             let alert = self.createAlert(
-                title: "Delay predicion for this flight:",
+                title: "Delay prediction for this flight:",
                 message: "\n\(newDelayPrediction)\n\nAre you sure you want to replace your flight with the one you selected?",
                 actions: [
                     UIAlertAction(title: "Yes", style: .default, handler: { _ in
