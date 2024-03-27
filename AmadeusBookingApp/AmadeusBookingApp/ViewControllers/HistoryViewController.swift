@@ -135,7 +135,7 @@ final class HistoryViewController: UIViewController {
     
     private func findBetterFlightAlternativesBasedOnDelay(currentFlight: ([DelayPrediction?], FlightDetails), flightOptions: [FlightDetails], completion: @escaping (([(DelayPrediction?, FlightDetails)])->Void)) {
         var betterOptions: [(DelayPrediction?, FlightDetails)] = []
-        flightOptions.forEach { flightOption in
+        for (index, flightOption) in flightOptions.enumerated() {
             self.predictDelay(for: flightOption.flightSegments) { delayPredictions in
                 let allCases = PredictionResultType.allCases
                 var currentFlightDelays = currentFlight.0
@@ -148,7 +148,7 @@ final class HistoryViewController: UIViewController {
                    newFlightDelay < currentFlightDelay {
                     betterOptions.append((newFlightDelayPrediction, flightOption))
                 }
-                if betterOptions.count == 3 || flightOptions.last != nil && flightOptions.last! == flightOption {
+                if betterOptions.count == 3 || index >= flightOptions.count-1 {
                     completion(betterOptions)
                 }
             }
